@@ -1,0 +1,37 @@
+.githubuserrank-extension {
+  &-badges-list {
+    width: 100%;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 15px 0 10px;
+    margin: 0
+  }
+
+  &-badge-language-name {
+    float: left;
+    padding: 0;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  &-badge-language-rank {
+    float: right;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  &-bit {
+    border-radius: 3px;
+    display: inline-block;
+    height: 11px;
+    margin: 0 3px 0 0;
+    width: 5px;
+
+    &.is-false { background-color: #e4e4e4; }
+    &.is-true { background-color: #3bc93e; }
+
+    &:last-child { margin: 0; }
+  }
+}

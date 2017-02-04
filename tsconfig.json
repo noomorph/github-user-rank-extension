@@ -1,0 +1,14 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es3",
+        "outDir": "dist",
+        "rootDir": "src",
+        "lib": ["es2016", "dom"],
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "sourceMap": true
+    }
+}

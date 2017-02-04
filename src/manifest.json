@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Github User Rank",
+    "short_name": "GithubUserRank",
+    "author": "Yaroslav Serhieiev <noomorph@gmail.com>",
+    "version": "1.0.0",
+    "description": "",
+    "icons": {},
+    "background": {},
+    "content_scripts": [
+        {
+            "run_at": "document_start",
+            "matches": ["https://github.com/*"],
+            "js": ["content.bundle.js"],
+            "css": ["content.css"]
+        }
+    ],
+    "permissions": [
+        "https://api.gitlance.net/*"
+    ]
+}

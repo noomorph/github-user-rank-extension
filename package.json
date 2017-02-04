@@ -1,0 +1,50 @@
+{
+  "name": "gitlance-peek-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist && mkdir dist",
+    "copy:manifest": "cp ./src/manifest.json ./dist/manifest.json",
+    "copy": "npm run copy:manifest",
+    "build:css": "node-sass --source-map true -o dist src",
+    "build:js:content": "browserify -d ./src/content.ts -p [ tsify ] | exorcist ./dist/content.bundle.js.map > ./dist/content.bundle.js",
+    "build:js": "npm run build:js:content",
+    "build:all": "npm run build:css; npm run build:js",
+    "build": "npm run clean && npm run copy && npm run build:all",
+    "test": "tsc --noEmit && node-sass>/dev/null src/content.scss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noomorph/gitlance-peek-extension.git"
+  },
+  "keywords": [
+    "browser-extension",
+    "github-extension",
+    "ranking",
+    "rank",
+    "developer",
+    "hr",
+    "recruiting",
+    "recruitment",
+    "gitlance",
+    "github"
+  ],
+  "author": "Yaroslav Serhieiev <noomorph@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/noomorph/gitlance-peek-extension/issues"
+  },
+  "homepage": "https://github.com/noomorph/gitlance-peek-extension#readme",
+  "devDependencies": {
+    "@types/whatwg-fetch": "0.0.33",
+    "browserify": "^14.1.0",
+    "exorcist": "^0.4.0",
+    "node-sass": "^4.5.0",
+    "tsify": "^3.0.1",
+    "typescript": "^2.1.6"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
