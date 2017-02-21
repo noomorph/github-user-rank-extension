@@ -22,12 +22,11 @@ export default function route_user_profile() {
 
 	fetch_languages_for(login).then(languages => {
 		const badges = render(badgesList(login, languages));
-		placeholder.appendChild(badges)
+		placeholder.insertBefore(badges, placeholder.children[0])
 	});
 }
 
 function find_placeholder_for_user_profile_info() {
 	const profileRoot = document.querySelector('[itemtype="http://schema.org/Person"]');
-	const h1 = profileRoot && profileRoot.querySelector('h1.vcard-names');
-	return h1 && h1.parentElement;
+    return profileRoot && profileRoot.querySelector('.user-profile-following-container');
 }

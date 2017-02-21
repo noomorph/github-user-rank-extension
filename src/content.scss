@@ -1,9 +1,13 @@
 .githubuserrank-extension {
+  &-section {
+    padding: 0 0 10px;
+  }
+
   &-badges-list {
     width: 100%;
     line-height: 22px;
     overflow: hidden;
-    padding: 15px 0 10px;
+    padding: 0 0 10px;
     margin: 0
   }
 
