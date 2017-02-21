@@ -8,25 +8,26 @@ import memoize = require('lodash/memoize');
 const fetch_languages_for = memoize(tmp_fetch);
 
 export default function route_user_profile() {
-	const login = get_user_profile_login();
+    const login = get_user_profile_login();
 
-	if (!login) {
-		return report_bi(BiEvents.LOGIN_NOT_FOUND);
-	}
+    if (!login) {
+        return report_bi(BiEvents.LOGIN_NOT_FOUND);
+    }
 
-	const placeholder = find_placeholder_for_user_profile_info();
+    const anchor = find_anchor_for_user_profile_info();
 
-	if (!placeholder) {
-		return report_bi(BiEvents.PLACEHOLDER_NOT_FOUND);
-	}
+    if (!anchor) {
+        return report_bi(BiEvents.PLACEHOLDER_NOT_FOUND);
+    }
 
-	fetch_languages_for(login).then(languages => {
-		const badges = render(badgesList(login, languages));
-		placeholder.insertBefore(badges, placeholder.children[0])
-	});
+    fetch_languages_for(login).then(languages => {
+        const badges = render(badgesList(login, languages));
+        const parent = anchor.parentElement;
+        parent && parent.insertBefore(badges, anchor);
+    });
 }
 
-function find_placeholder_for_user_profile_info() {
+function find_anchor_for_user_profile_info() {
     const profileRoot = document.querySelector('[itemtype="http://schema.org/Person"]');
     const h1 = profileRoot && profileRoot.querySelector('h1.vcard-names');
 
