@@ -2,7 +2,7 @@ export function fetch_languages_for(login: string): PromiseLike<GitlanceBadgeDat
 	return fetch(getRanksUrl(login))
 		.then(response => response.json())
 		.then(json => validateApiResponse(json))
-		.then(profile => profile.languages.map(langInfo => ({
+		.then(profile => !profile ? [] : profile.languages.map(langInfo => ({
 			language: langInfo.language.name,
 			rank: Number(langInfo.langRank),
 			bits: Number(langInfo.gitBits)
@@ -33,14 +33,14 @@ function filterMarkupLanguages(badge: GitlanceBadgeData) {
 }
 
 function validateApiResponse(json: any): PromiseLike<GitlanceUserProfile> | PromiseLike<never> {
-	if (Array.isArray(json) && json.length > 0) {
-		const profile = json[0] as GitlanceUserProfile;
-		profile.languages = profile.languages || [];
+	if (!Array.isArray(json)) {
+        return Promise.reject('unexpected response from API')
+    }
 
-		return Promise.resolve(profile);
-	}
+    const profile = json[0] as GitlanceUserProfile || {};
+    profile.languages = profile.languages || [];
 
-	return Promise.reject('unexpected response from API')
+    return Promise.resolve(profile);
 }
 
 export interface GitlanceBadgeData {
