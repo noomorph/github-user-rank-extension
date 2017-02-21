@@ -4,3 +4,12 @@
 
 Yet another small content script, based on [gitlance.net](http://beta.gitlance.net) data,
 it adds rankings straight to Github user profiles so you don't have to go anywhere anymore.
+
+### Building
+
+Like a typical NPM-based project, it requires a couple of commands to get started:
+
+```
+npm install
+npm run build
+```
