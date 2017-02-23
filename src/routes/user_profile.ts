@@ -20,11 +20,19 @@ export default function route_user_profile() {
         return report_bi(BiEvents.PLACEHOLDER_NOT_FOUND);
     }
 
+    if (is_there_a_previously_inserted_section()) {
+        return;
+    }
+
     fetch_languages_for(login).then(languages => {
         const badges = render(badgesList(login, languages));
         const parent = anchor.parentElement;
         parent && parent.insertBefore(badges, anchor);
     });
+}
+
+function is_there_a_previously_inserted_section() {
+    return document.getElementsByClassName('githubuserrank-extension-section').length > 0;
 }
 
 function find_anchor_for_user_profile_info() {
