@@ -9,7 +9,8 @@
     "copy": "npm run copy:manifest",
     "build:css": "node-sass --source-map true -o dist src",
     "build:js:content": "browserify -d ./src/content.ts -p [ tsify ] | exorcist ./dist/content.bundle.js.map > ./dist/content.bundle.js",
-    "build:js": "npm run build:js:content",
+    "build:js:background": "browserify -d ./src/background.ts -p [ tsify ] | exorcist ./dist/background.bundle.js.map > ./dist/background.bundle.js",
+    "build:js": "npm run build:js:content & npm run build:js:background",
     "build:all": "npm run build:css; npm run build:js",
     "build": "npm run clean && npm run copy && npm run build:all",
     "test": "tsc --noEmit && node-sass>/dev/null src/content.scss"
@@ -37,13 +38,13 @@
   },
   "homepage": "https://github.com/noomorph/gitlance-peek-extension#readme",
   "devDependencies": {
-    "@types/lodash": "^4.14.52",
-    "@types/whatwg-fetch": "0.0.33",
+    "@types/lodash": "^4.14.54",
     "browserify": "^14.1.0",
     "exorcist": "^0.4.0",
     "node-sass": "^4.5.0",
     "tsify": "^3.0.1",
-    "typescript": "~2.1.6"
+    "typescript": "^2.2.1",
+    "web-ext": "^1.8.1"
   },
   "dependencies": {
     "lodash": "^4.17.4"

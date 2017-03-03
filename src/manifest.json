@@ -6,7 +6,9 @@
     "version": "1.0.0",
     "description": "",
     "icons": {},
-    "background": {},
+    "background": {
+        "scripts": ["background.bundle.js"]
+    },
     "content_scripts": [
         {
             "run_at": "document_start",
