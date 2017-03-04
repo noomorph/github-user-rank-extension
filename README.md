@@ -28,4 +28,4 @@ At the end, you should be able to see `dist` folder built aside `src`.
 * Open any Github user profile (e.g. [@noomorph](https://github.com/noomorph))
 * You should be able to see GitLance stats of the person, below to the profile picture:
 
-![Github User Rank extension screenshot](https://github.com/noomorph/github-user-rank-extension/raw/master/docs/images/profile-screenshot.webp "Github User Rank extension screenshot")
+![Github User Rank extension screenshot](https://github.com/noomorph/github-user-rank-extension/raw/master/docs/images/profile-screenshot.png "Github User Rank extension screenshot")
