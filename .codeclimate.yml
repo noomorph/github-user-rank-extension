@@ -1,0 +1,13 @@
+---
+engines:
+  scss-lint:
+    enabled: true
+  tslint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "src/**/*.ts"
+  - "src/**/*.scss"
+exclude_paths: []
