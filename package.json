@@ -13,7 +13,11 @@
     "build:js": "yarn run build:js:content & yarn run build:js:background",
     "build:all": "yarn run build:css; yarn run build:js",
     "build": "yarn run clean && yarn run copy && yarn run build:all",
-    "test": "tsc --noEmit && node-sass>/dev/null src/content.scss"
+    "pretest": "tsc",
+    "test": "nyc ava",
+    "report:nyc": "nyc report --reporter=lcov",
+    "report:codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
+    "report": "yarn run report:nyc && yarn run report:codeclimate"
   },
   "repository": {
     "type": "git",
@@ -37,12 +41,22 @@
     "url": "https://github.com/noomorph/gitlance-peek-extension/issues"
   },
   "homepage": "https://github.com/noomorph/gitlance-peek-extension#readme",
+  "ava": {
+    "require": [
+      "./dist/background",
+      "./dist/content"
+    ]
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.54",
+    "ava": "^0.18.2",
     "browserify": "^14.1.0",
+    "codeclimate-test-reporter": "^0.4.1",
     "exorcist": "^0.4.0",
     "node-sass": "^4.5.0",
+    "nyc": "^10.1.2",
     "tsify": "^3.0.1",
+    "tslint": "^4.5.1",
     "typescript": "^2.2.1",
     "web-ext": "^1.8.1"
   },

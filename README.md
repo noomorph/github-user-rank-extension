@@ -4,6 +4,7 @@
 [![Dependencies Status](https://david-dm.org/noomorph/github-user-rank-extension/status.svg)](https://david-dm.org/noomorph/github-user-rank-extension)
 [![Dev Dependencies Status](https://david-dm.org/noomorph/github-user-rank-extension/dev-status.svg)](https://david-dm.org/noomorph/github-user-rank-extension?type=dev)
 [![Issue Count](https://codeclimate.com/github/noomorph/github-user-rank-extension/badges/issue_count.svg)](https://codeclimate.com/github/noomorph/github-user-rank-extension)
+[![Test Coverage](https://codeclimate.com/github/noomorph/github-user-rank-extension/badges/coverage.svg)](https://codeclimate.com/github/noomorph/github-user-rank-extension/coverage)
 
 Yet another small content script, based on [gitlance.net](http://beta.gitlance.net) data,
 it adds rankings straight to Github user profiles so you don't have to go anywhere anymore.

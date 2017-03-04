@@ -1,6 +1,6 @@
 language: node_js
 cache: yarn
-script: yarn test
+script: yarn test && yarn run report
 sudo: false
 node_js:
     - "stable"
