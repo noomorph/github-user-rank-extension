@@ -1,8 +1,3 @@
-import user_profile from './user_profile';
-import repo_contributors from './repo_contributors';
-import not_found from './not_found';
-import {get_meta_location} from '../utils/github';
-
 export interface IRouterConfiguration {
     get_location: () => string;
 

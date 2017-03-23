@@ -1,6 +1,6 @@
 import {h} from '../utils/h';
-import {getTopDevsUrl, getRanksUrl} from '../utils/gitlance';
-import languageColors from '../language-colors-light';
+import {getTopDevsUrl, getRanksUrl} from '../../common/utils/gitlance';
+import languageColors from './language-colors-light';
 import mapKeys = require('lodash/mapKeys');
 import range = require('lodash/range');
 

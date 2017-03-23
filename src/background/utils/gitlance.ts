@@ -1,3 +1,6 @@
+import {GitlanceBadgeData, GitlanceUserProfile} from '../../common/gitlance.schema';
+import {getRanksUrl} from '../../common/utils/gitlance';
+
 export function fetch_languages_for(login: string): PromiseLike<GitlanceBadgeData[]> {
 	return fetch(getRanksUrl(login))
 		.then(response => response.json())
@@ -8,14 +11,6 @@ export function fetch_languages_for(login: string): PromiseLike<GitlanceBadgeDat
 			bits: Number(langInfo.gitBits)
 		})))
         .then(badges => badges.filter(filterMarkupLanguages));
-}
-
-export function getRanksUrl(login: string): string {
-	return `https://api.gitlance.net/v1/profiles?login=${encodeURIComponent(login)}`;
-}
-
-export function getTopDevsUrl(language: string): string {
-	return `http://gitlance.net/top/${encodeURIComponent(language.toLowerCase())}`;
 }
 
 function filterMarkupLanguages(badge: GitlanceBadgeData) {
@@ -41,22 +36,4 @@ function validateApiResponse(json: any): PromiseLike<GitlanceUserProfile> | Prom
     profile.languages = profile.languages || [];
 
     return Promise.resolve(profile);
-}
-
-export interface GitlanceBadgeData {
-    language: string;
-    rank: number;
-    bits: number;
-}
-
-export interface GitlanceUserProfile {
-	languages: GitlanceLanguageProfile[];
-}
-
-export interface GitlanceLanguageProfile {
-	language: {
-		name: string;
-	}
-	langRank: number;
-	gitBits: number;
 }
