@@ -1,10 +1,7 @@
 import {GUREContentMessage} from "../common/messages.schema";
 import {report_bi} from "./utils/bi";
-import {fetch_languages_for as tmp_fetch} from "./utils/gitlance";
-import memoize = require('lodash/memoize');
+import {fetch_languages_for} from "./utils/gitlance";
 import "../external/browser";
-
-const fetch_languages_for = memoize(tmp_fetch);
 
 export default function main(browser: typeof window.browser) {
     browser.runtime.onMessage.addListener(function (message: GUREContentMessage, sender: browser.runtime.MessageSender, sendResponse: (response: any) => void) {
