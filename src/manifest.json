@@ -5,7 +5,9 @@
     "author": "Yaroslav Serhieiev <noomorph@gmail.com>",
     "version": "1.0.0",
     "description": "",
-    "icons": {},
+    "icons": {
+        "128": "resources/icon.png"
+    },
     "background": {
         "scripts": ["background.bundle.js"]
     },
