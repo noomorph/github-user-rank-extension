@@ -1,6 +1,8 @@
 .idea
 .nyc_output
+.DS_Store
 coverage
 dist
 node_modules
 npm-debug.log
+*.safariextension
