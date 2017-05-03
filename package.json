@@ -19,7 +19,7 @@
     "package": "yarn run pre-package && yarn package:safari",
     "pretest": "tsc",
     "test": "nyc ava",
-    "report": "nyc report --reporter=text-lcov | coveralls"
+    "report:coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
