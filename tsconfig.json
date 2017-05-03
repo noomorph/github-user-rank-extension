@@ -7,8 +7,13 @@
         "outDir": "dist",
         "rootDir": "src",
         "lib": ["es2016", "dom"],
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "importHelpers": true,
+        "downlevelIteration": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true
     }
 }

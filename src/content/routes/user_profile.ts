@@ -4,18 +4,20 @@ import {get_user_profile_login} from '../utils/github';
 import {render} from '../utils/h';
 import {BiEvents} from '../../common/bi.schema';
 
-export default function route_user_profile(browser: typeof window.browser) {
+export default function route_user_profile(browser: typeof window.browser): void {
     const rpc = init_rpc(browser);
     const login = get_user_profile_login();
 
     if (!login) {
-        return rpc.report_bi(BiEvents.LOGIN_NOT_FOUND);
+        rpc.report_bi(BiEvents.LOGIN_NOT_FOUND);
+        return;
     }
 
     const anchor = find_anchor_for_user_profile_info();
 
     if (!anchor) {
-        return rpc.report_bi(BiEvents.PLACEHOLDER_NOT_FOUND);
+        rpc.report_bi(BiEvents.PLACEHOLDER_NOT_FOUND);
+        return;
     }
 
     if (is_there_a_previously_inserted_section()) {

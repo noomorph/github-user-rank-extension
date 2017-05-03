@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.54",
+    "@types/safari-extension": "^0.0.27",
     "ava": "^0.18.2",
     "browserify": "^14.1.0",
     "coveralls": "^2.11.16",
@@ -64,6 +65,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
+    "tslib": "^1.6.1",
     "whatwg-fetch": "^2.0.3"
   }
 }

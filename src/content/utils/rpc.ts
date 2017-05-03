@@ -10,7 +10,7 @@ type QueueItem = {
 export default function init(browser: Browser) {
     const queue = new Map<number, QueueItem>();
 
-    browser.runtime.onMessage.addListener(function (message: messages.GUREBackgroundMessage, sender: browser.runtime.MessageSender, sendResponse: (response: any) => void) {
+    browser.runtime.onMessage.addListener(function (message: messages.GUREBackgroundMessage, sender: browser.runtime.MessageSender /*, sendResponse: (response: any) => void */) {
         const item = queue.get(message.thread);
 
         if (item) {

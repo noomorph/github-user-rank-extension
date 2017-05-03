@@ -1,12 +1,12 @@
 import {h} from '../utils/h';
-import {getTopDevsUrl, getRanksUrl} from '../../common/utils/gitlance';
+import {/* getTopDevsUrl, */ getRanksUrl} from '../../common/utils/gitlance';
 import languageColors from './language-colors-light';
-import mapKeys = require('lodash/mapKeys');
+// import mapKeys = require('lodash/mapKeys');
 import range = require('lodash/range');
 
 export default function badge(username: string, { language, rank, bits }: { language: string, rank: number, bits: number }) {
 	return [
-		h('dt', { className: classForLanguage(language) }, [
+		h('dt', { className: classForLanguage() }, [
             h('span', {
                 className: 'repo-language-color pinned-repo-meta',
                 style: `background-color:${colorForLanguage(language)}`
@@ -22,7 +22,7 @@ function rank_url(username: string, language: string, rank: number, bits: number
 	return h('a', { href: getRanksUrl(username), title: explain(language, rank, bits) }, bitify(bits));
 }
 
-function classForLanguage(language: string): string {
+function classForLanguage(): string {
 	return 'mb-0 f6 text-gray githubuserrank-extension-badge-language-name';
 }
 
