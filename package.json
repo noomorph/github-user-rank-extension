@@ -4,18 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf dist && mkdir dist",
-    "copy:manifest": "cp ./src/manifest.json ./dist/manifest.json",
-    "copy": "yarn run copy:manifest",
+    "clean": "(rm -rf dist && mkdir dist) & rm -rf gur.safariextension",
+    "copy:other": "bash -c \"cp ./src/*.{json,plist,html} ./dist/\"",
+    "copy:polyfill": "cp ./node_modules/whatwg-fetch/fetch.js ./gur.safariextension/",
+    "copy:resources": "cp -r ./src/resources ./dist/",
+    "copy": "yarn run copy:other & yarn run copy:resources",
     "build:css": "node-sass --source-map true -o dist src",
     "build:js:content": "browserify -d ./src/content.ts -p [ tsify ] | exorcist ./dist/content.bundle.js.map > ./dist/content.bundle.js",
     "build:js:background": "browserify -d ./src/background.ts -p [ tsify ] | exorcist ./dist/background.bundle.js.map > ./dist/background.bundle.js",
     "build:js": "yarn run build:js:content & yarn run build:js:background",
-    "build:all": "yarn run build:css; yarn run build:js",
-    "build": "yarn run clean && yarn run copy && yarn run build:all",
+    "build:all": "yarn run build:css & yarn run build:js",
+    "pre-package": "yarn run clean && yarn run copy && yarn run build:all",
+    "package:safari": "cp -r ./dist ./gur.safariextension && yarn run copy:polyfill",
+    "package": "yarn run pre-package && yarn package:safari",
     "pretest": "tsc",
     "test": "nyc ava",
-    "report": "nyc report --reporter=text-lcov | coveralls"
+    "report:coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -47,6 +51,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.54",
+    "@types/safari-extension": "^0.0.27",
     "ava": "^0.18.2",
     "browserify": "^14.1.0",
     "coveralls": "^2.11.16",
@@ -59,6 +64,8 @@
     "web-ext": "^1.8.1"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "tslib": "^1.6.1",
+    "whatwg-fetch": "^2.0.3"
   }
 }

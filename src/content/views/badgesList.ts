@@ -1,5 +1,5 @@
 import {h} from '../utils/h';
-import {GitlanceBadgeData} from '../utils/gitlance';
+import {GitlanceBadgeData} from '../../common/gitlance.schema';
 import badge from './badge';
 
 function credits(found: boolean) {

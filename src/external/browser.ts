@@ -10,6 +10,8 @@ interface Window {
     browser: typeof browser;
 }
 
+declare var chrome: typeof browser;
+
 ////////////////////
 // Commands
 ////////////////////
