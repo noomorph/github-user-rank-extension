@@ -19,7 +19,7 @@ Like a typical NodeJS-based project, it requires a couple of commands to get sta
 
 ```
 yarn
-yarn run build
+yarn package
 ```
 
 At the end, you should be able to see `dist` folder built aside `src`.
