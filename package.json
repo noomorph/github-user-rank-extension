@@ -51,11 +51,13 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.54",
+    "@types/node-fetch": "^1.6.7",
     "@types/safari-extension": "^0.0.27",
     "ava": "^0.18.2",
     "browserify": "^14.1.0",
     "coveralls": "^2.11.16",
     "exorcist": "^0.4.0",
+    "node-fetch": "^1.6.3",
     "node-sass": "^4.5.0",
     "nyc": "^10.1.2",
     "tsify": "^3.0.1",
