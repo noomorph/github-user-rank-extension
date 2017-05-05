@@ -10,6 +10,8 @@
 
 <hr />
 
+Install **GitHub User Rank** extension from [Chrome Web Store](https://chrome.google.com/webstore/detail/github-user-rank/oabhkjmpcnkeifhahnlhafajeoofhjak) or [Mozilla Add-ons Store](https://addons.mozilla.org/en-US/firefox/addon/github-user-rank-extension/).
+
 Yet another small content script, based on [gitlance.net](http://beta.gitlance.net) data,
 it adds rankings straight to GitHub user profiles so you don't have to go anywhere anymore.
 
