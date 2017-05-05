@@ -3,6 +3,7 @@ import {GitlanceBadgeData} from './gitlance.schema';
 export interface GUREMessage {
     thread: number;
     type: string;
+    data?: any;
 }
 
 export interface FetchGitlanceDataRequest extends GUREMessage {
