@@ -1,4 +1,4 @@
-# Github User Rank extension
+# GitHub User Rank extension
 
 ![Logo](./src/resources/promo.png)
 
@@ -11,7 +11,7 @@
 <hr />
 
 Yet another small content script, based on [gitlance.net](http://beta.gitlance.net) data,
-it adds rankings straight to Github user profiles so you don't have to go anywhere anymore.
+it adds rankings straight to GitHub user profiles so you don't have to go anywhere anymore.
 
 ### Building
 
@@ -31,7 +31,7 @@ At the end, you should be able to see `dist` folder built aside `src`.
 
 ### Usage
 
-* Open any Github user profile (e.g. [@noomorph](https://github.com/noomorph))
+* Open any GitHub user profile (e.g. [@noomorph](https://github.com/noomorph))
 * You should be able to see GitLance stats of the person, below to the profile picture:
 
-![Github User Rank extension screenshot](https://github.com/noomorph/github-user-rank-extension/raw/master/docs/images/profile-screenshot.png "Github User Rank extension screenshot")
+![GitHub User Rank extension screenshot](https://github.com/noomorph/github-user-rank-extension/raw/master/docs/images/profile-screenshot.png "GitHub User Rank extension screenshot")
