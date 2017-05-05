@@ -3,7 +3,7 @@
     "name": "Github User Rank",
     "short_name": "GithubUserRank",
     "author": "Yaroslav Serhieiev <noomorph@gmail.com>",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "icons": {
         "128": "resources/icon.png"

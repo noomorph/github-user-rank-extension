@@ -1,6 +1,6 @@
 {
-  "name": "gitlance-peek-extension",
-  "version": "1.0.0",
+  "name": "github-user-rank-extension",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noomorph/gitlance-peek-extension.git"
+    "url": "git+https://github.com/noomorph/github-user-rank-extension.git"
   },
   "keywords": [
     "browser-extension",
@@ -40,9 +40,9 @@
   "author": "Yaroslav Serhieiev <noomorph@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/noomorph/gitlance-peek-extension/issues"
+    "url": "https://github.com/noomorph/github-user-rank-extension/issues"
   },
-  "homepage": "https://github.com/noomorph/gitlance-peek-extension#readme",
+  "homepage": "https://github.com/noomorph/github-user-rank-extension#readme",
   "ava": {
     "require": [
       "./dist/background",
