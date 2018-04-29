@@ -4,22 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "(rm -rf dist && mkdir dist) & rm -rf gur.safariextension",
-    "copy:other": "bash -c \"cp ./src/*.{json,plist,html} ./dist/\"",
-    "copy:polyfill": "cp ./node_modules/whatwg-fetch/fetch.js ./gur.safariextension/",
-    "copy:resources": "cp -r ./src/resources ./dist/",
-    "copy": "yarn run copy:other & yarn run copy:resources",
-    "build:css": "node-sass --source-map true -o dist src",
-    "build:js:content": "browserify -d ./src/content.ts -p [ tsify ] | exorcist ./dist/content.bundle.js.map > ./dist/content.bundle.js",
-    "build:js:background": "browserify -d ./src/background.ts -p [ tsify ] | exorcist ./dist/background.bundle.js.map > ./dist/background.bundle.js",
-    "build:js": "yarn run build:js:content & yarn run build:js:background",
-    "build:all": "yarn run build:css & yarn run build:js",
-    "pre-package": "yarn run clean && yarn run copy && yarn run build:all",
-    "package:safari": "cp -r ./dist ./gur.safariextension && yarn run copy:polyfill",
-    "package": "yarn run pre-package && yarn package:safari",
+    "clean": "bash scripts/clean.sh",
+    "build": "bash scripts/build.sh",
+    "copy": "bash scripts/copy.sh",
+    "package": "npm run clean && npm run copy && npm run build",
+    "package:safari": "npm run package && npm run copy -- safari",
     "pretest": "tsc",
+    "report:coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc ava",
-    "report:coverage": "nyc report --reporter=text-lcov | coveralls"
+    "travis": "npm test && npm run package && npm run report:coverage"
   },
   "repository": {
     "type": "git",
@@ -50,24 +43,25 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.54",
-    "@types/node-fetch": "^1.6.7",
+    "@types/lodash": "^4.14.108",
+    "@types/node": "^9.6.7",
+    "@types/node-fetch": "^1.6.9",
     "@types/safari-extension": "^0.0.27",
-    "ava": "^0.18.2",
-    "browserify": "^14.1.0",
-    "coveralls": "^2.11.16",
-    "exorcist": "^0.4.0",
-    "node-fetch": "^1.6.3",
-    "node-sass": "^4.5.0",
-    "nyc": "^10.1.2",
-    "tsify": "^3.0.1",
-    "tslint": "^4.5.1",
-    "typescript": "^2.2.1",
-    "web-ext": "^1.8.1"
+    "ava": "^0.25.0",
+    "browserify": "^16.2.0",
+    "coveralls": "^3.0.0",
+    "exorcist": "^1.0.1",
+    "node-fetch": "^2.1.2",
+    "node-sass": "^4.9.0",
+    "nyc": "^11.7.1",
+    "tsify": "^4.0.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.3",
+    "web-ext": "^2.6.0"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
-    "tslib": "^1.6.1",
-    "whatwg-fetch": "^2.0.3"
+    "lodash": "^4.17.10",
+    "tslib": "^1.9.0",
+    "whatwg-fetch": "^2.0.4"
   }
 }
