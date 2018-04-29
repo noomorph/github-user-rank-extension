@@ -20,8 +20,8 @@ it adds rankings straight to GitHub user profiles so you don't have to go anywhe
 Like a typical NodeJS-based project, it requires a couple of commands to get started:
 
 ```
-yarn
-yarn package
+npm install
+npm run package
 ```
 
 At the end, you should be able to see `dist` folder built aside `src`.

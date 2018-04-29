@@ -1,6 +1,6 @@
 language: node_js
-cache: yarn
-script: yarn test && yarn package && yarn report:coverage
+cache: npm
+script: npm run travis
 sudo: false
 node_js:
     - "stable"
