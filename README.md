@@ -1,5 +1,18 @@
 # GitHub User Rank extension
 
+## He's dead, Jim...
+
+As of 2018/08/12, GitLance (the current data provider for the GitHub User Rank) is down. Hence the extension ceased to work as well.
+
+See for yourself: http://gitlance.net/top/javascript.
+
+Anyway, I'm not saying farewell, but a kind-hearted goodbye instead. I'm sure it's going to take a few months till I'll be able to rewrite it. Wish me good luck!
+
+Stay tuned!
+
+### ---------------------------------------------------------------------------
+
+
 ![Logo](./src/resources/promo.png)
 
 [![Build Status](https://travis-ci.org/noomorph/github-user-rank-extension.svg?branch=master)](https://travis-ci.org/noomorph/github-user-rank-extension)
