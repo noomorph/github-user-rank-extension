@@ -12,7 +12,9 @@
     "pretest": "tsc",
     "report:coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc ava",
-    "travis": "npm test && npm run package && npm run report:coverage"
+    "travis": "npm test && npm run package && npm run report:coverage",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -62,6 +64,8 @@
   "dependencies": {
     "lodash": "^4.17.10",
     "tslib": "^1.9.0",
-    "whatwg-fetch": "^2.0.4"
-  }
+    "whatwg-fetch": "^2.0.4",
+    "snyk": "^1.316.2"
+  },
+  "snyk": true
 }
